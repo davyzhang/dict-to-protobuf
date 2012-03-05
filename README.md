@@ -23,6 +23,7 @@ example proto:
 generate the python code as down_pb2.py
 
 python code:
+
 	>>>from down_pb2 import items
 	>>>item_message = items()
 	>>>item_dict = {'req':{'require_sex':1,'fate':[12,34]},'attack':[{'max':29,'min':10},{'max':2,'min':1}]}
