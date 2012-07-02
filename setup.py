@@ -6,7 +6,7 @@ setup(
         'python dict. Useful when need to put dict on socket transmission.' 
         'You can not directly json a protobuf message object, it\'s not hashable'
         ,
-    version='0.0.1',
+    version='0.0.2',
     author='davy zhang',
     author_email='davyzhang@gmail.com',
     url='https://github.com/davyzhang/dict-to-protobuf',
