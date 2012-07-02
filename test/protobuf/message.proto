@@ -1,0 +1,7 @@
+message CityAoi {
+	message PlayerCityAoi{
+		optional int32 role_id = 1;  // 目标id
+		optional int32 target_x = 2;        // 玩家目标x坐镖
+	}
+	repeated PlayerCityAoi player = 1;
+}

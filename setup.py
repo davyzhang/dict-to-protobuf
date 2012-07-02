@@ -14,7 +14,7 @@ setup(
     keywords=['protobuf', 'dict'],
     install_requires=['protobuf>=2.3.0'],
     package_dir={'':'src'},
-    py_modules=['dict-to-protobuf'],
+    py_modules=['dict_to_protobuf'],
     classifiers=[
         'Programming Language :: Python',
         'Development Status :: 4 - Beta',

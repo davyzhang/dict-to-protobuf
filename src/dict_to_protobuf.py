@@ -1,12 +1,13 @@
 #coding=utf-8
 from types import StringTypes
+import logging
 
+l = logging.getLogger('dict_to_protbuf')
 
+__all__ = ['dict_to_protobuf']
 def parse_list(values,message):
     '''parse list to protobuf message'''
     if isinstance(values[0],dict):#value needs to be further parsed
-        des = message._message_descriptor
-        class_name = des.name
         for v in values:
             cmd = message.add()
             parse_dict(v,cmd)
@@ -21,6 +22,12 @@ def parse_dict(values,message):
         elif isinstance(v,list):
             parse_list(v,getattr(message,k))
         else:#value can be set
-            setattr(message, k, v)
+            try:
+                setattr(message, k, v)
+            except AttributeError:
+                l.warning('try to access invalid attributes %r.%r = %r',message,k,v)
+                
             
 
+def dict_to_protobuf(value,message):
+    parse_dict(value,message)
