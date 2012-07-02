@@ -25,6 +25,7 @@ def parse_dict(values,message):
             try:
                 setattr(message, k, v)
             except AttributeError:
+                logging.basicConfig()
                 l.warning('try to access invalid attributes %r.%r = %r',message,k,v)
                 
             
